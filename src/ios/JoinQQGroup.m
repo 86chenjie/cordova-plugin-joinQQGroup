@@ -35,4 +35,15 @@
 
 }
 
+- (void)openWechat:(CDVInvokedUrlCommand *)command{
+
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL  URLWithString:@"weixin://"]]){
+        NSLog(@"install--");
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"weixin://"]];
+    }else{ 
+        NSLog(@"no---");
+    }
+
+}
+
 @end

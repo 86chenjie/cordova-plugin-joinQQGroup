@@ -4,5 +4,6 @@
 @interface JoinQQGroup : CDVPlugin
 
 - (void)open:(CDVInvokedUrlCommand *)command;
+- (void)openWechat:(CDVInvokedUrlCommand *)command;
 
 @end
