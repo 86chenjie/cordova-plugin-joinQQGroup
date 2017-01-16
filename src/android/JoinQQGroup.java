@@ -35,7 +35,9 @@ public class JoinQQGroup extends CordovaPlugin {
 	public boolean joinQQGroup(String key) {
 		Intent intent = new Intent();
 		intent.setData(Uri
-				.parse("mqqopensdkapi://bizAgent/qm/qr?url=http%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Ffrom%3Dapp%26p%3Dandroid%26k%3D"
+				.parse(
+					//"mqqopensdkapi://bizAgent/qm/qr?url=http%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Ffrom%3Dapp%26p%3Dandroid%26k%3D"
+					"mqqwpa://im/chat?chat_type=wpa&uin="
 						+ key));
 		// 此Flag可根据具体产品需要自定义，如设置，则在加群界面按返回，返回手Q主界面，不设置，按返回会返回到呼起产品界面
 		// intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -46,6 +48,12 @@ public class JoinQQGroup extends CordovaPlugin {
 			// 未安装手Q或安装的版本不支持
 			return false;
 		}
+
+		/*
+		String url="mqqwpa://im/chat?chat_type=wpa&uin=501863587";  
+		startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url))); 
+		*/
+
 	}
 
 }
